@@ -9,27 +9,26 @@ class Tile extends React.Component {
     }
 
     render() {
-        debugger;
-        const status = "";
+        const status = "tile ";
         const adjacentBombs = 0;
         const symbol = "";
 
         if (this.explored) {
-            status = "revealed";
+            status += "revealed";
             if (this.adjacentBombCount() > 1) {
                 adjacentBombs = this.adjacentBombCount();
                 symbol = adjacentBombs;
             }
         } else if (this.flagged) {
-            status = "flagged";
+            status += "flagged";
             symbol = "🚩";
         } else if (this.bombed) {
-            status = "bombed";
+            status += "bombed";
             symbol = "💣";
         }
 
         return(
-            <div className={status}>T</div>
+            <div className={status}>{symbol}</div>
         )
     }
 }

@@ -8,18 +8,18 @@ class Board extends React.Component {
     }
 
     render() {
-        debugger;
 
         return(
-            <div>
+            <div class="board">
                 {
                     this.props.board.grid.map((row, rowidx) => {
-                        <div key={rowidx}>
-                            {row.map((pos, idx) => {
-                                <Tile tile={pos} update={this.props.update} key={idx} />
-                            })}
-                        </div>
-
+                        return(
+                            <div key={rowidx}>
+                                {row.map((pos, idx) => {
+                                    return <Tile tile={pos} update={this.props.update} key={idx} />
+                                })}
+                            </div>
+                        )
                     })
                 }
             </div>

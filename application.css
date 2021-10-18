@@ -1,1 +1,26 @@
+#root {
+ 
+}
 
+.tile {
+    border: 1px solid black;
+    flex-wrap: wrap;
+    height: 57.5px;
+    width: 57.5px;
+    background:aqua;
+    border-style: outset;
+}
+
+.board {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 500px;
+    height: 500px;
+    background: aliceblue;
+    padding: 10px;
+}
+
+.revealed {
+    border-style: inset;
+}
