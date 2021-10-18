@@ -21,7 +21,7 @@ class Game extends React.Component{
     render() {
         // const Board = Minesweeper.Board
         return(
-                <Board board={this.state.board} update={this.updateGame} />         
+            <Board board={this.state.board} update={this.updateGame} />         
         )
     }
 }

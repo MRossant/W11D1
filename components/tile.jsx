@@ -1,18 +1,35 @@
-// import { Tile as Minesweeper } from "../minesweeper";
-// import { Board as Minesweeper }  from "../minesweeper";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as Minesweeper from "../minesweeper";
+import Board from './board';
 
 class Tile extends React.Component {
-    constructor() {
-        super();
-
+    constructor(props) {
+        super(props);
     }
 
     render() {
+        debugger;
+        const status = "";
+        const adjacentBombs = 0;
+        const symbol = "";
+
+        if (this.explored) {
+            status = "revealed";
+            if (this.adjacentBombCount() > 1) {
+                adjacentBombs = this.adjacentBombCount();
+                symbol = adjacentBombs;
+            }
+        } else if (this.flagged) {
+            status = "flagged";
+            symbol = "🚩";
+        } else if (this.bombed) {
+            status = "bombed";
+            symbol = "💣";
+        }
+
         return(
-            <p>T</p>
+            <div className={status}>T</div>
         )
     }
 }

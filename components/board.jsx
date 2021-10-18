@@ -1,11 +1,15 @@
-// import { Tile as Minesweeper } from "../minesweeper";
-// import { Board as Minesweeper }  from "../minesweeper";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Tile from './tile';
 
 class Board extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
     render() {
+        debugger;
+
         return(
             <div>
                 {
@@ -13,7 +17,7 @@ class Board extends React.Component {
                         <div key={rowidx}>
                             {row.map((pos, idx) => {
                                 <Tile tile={pos} update={this.props.update} key={idx} />
-                            }) }
+                            })}
                         </div>
 
                     })
