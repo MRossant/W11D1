@@ -14,6 +14,7 @@ class Game extends React.Component{
     }
 
     updateGame(tile, isFlagged) {
+
         if (isFlagged) {
             tile.toggleFlag();
         } else {

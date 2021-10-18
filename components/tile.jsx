@@ -13,29 +13,32 @@ class Tile extends React.Component {
         event.preventDefault();
         const isFlagged = event.altKey
         this.props.update(this.props.tile, isFlagged);
+        console.log('i clicked')
     }
 
     render() {
-        const status = "tile ";
+        const status = "";
         const adjacentBombs = 0;
         const symbol = "";
 
         if (this.explored) {
-            status += "revealed";
-            if (this.adjacentBombCount() > 1) {
+            status = "revealed";
+            if (this.adjacentBombCount() >= 1) {
                 adjacentBombs = this.adjacentBombCount();
                 symbol = adjacentBombs;
             }
         } else if (this.flagged) {
-            status += "flagged";
+            status = "flagged";
             symbol = "🚩";
         } else if (this.bombed) {
-            status += "bombed";
+            status = "bombed";
             symbol = "💣";
         }
 
+        const stat = `tile ${status}`
+
         return(
-            <div className={status} onClick={this.handleClick(event)}>{symbol}</div>
+            <div className={stat} onClick={this.handleClick}>{symbol}</div>
         )
     }
 }
