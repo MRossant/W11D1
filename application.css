@@ -23,4 +23,5 @@
 
 .revealed {
     border-style: inset;
+    background: red;
 }

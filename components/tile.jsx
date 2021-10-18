@@ -6,6 +6,13 @@ import Board from './board';
 class Tile extends React.Component {
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick(event) {
+        event.preventDefault();
+        const isFlagged = event.altKey
+        this.props.update(this.props.tile, isFlagged);
     }
 
     render() {
@@ -28,7 +35,7 @@ class Tile extends React.Component {
         }
 
         return(
-            <div className={status}>{symbol}</div>
+            <div className={status} onClick={this.handleClick(event)}>{symbol}</div>
         )
     }
 }
